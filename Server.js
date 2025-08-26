@@ -14,11 +14,11 @@ app.use(express.json());
 const server = http.createServer(app);
 
 const io = new Server(server, {
-    cors: {
-        origin: "https://taupe-madeleine-4fb604.netlify.app/", // ✅ frontend origin
-        methods: ["GET", "POST"],
-        credentials: true,
-    },
+  cors: {
+    origin: "https://taupe-madeleine-4fb604.netlify.app", // ← No trailing slash
+    methods: ["GET", "POST"],
+    credentials: true,
+  },
 });
 
 io.on("connection", (socket) => {
